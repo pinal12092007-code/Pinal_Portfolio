@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinal Patel - Professional Portfolio & Resume</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+</head>
+<body data-theme="light">
+
+    <div class="container">
+        
+        <!-- Top Hero Card -->
+        <div class="card hero-card">
+            <div class="hero-content">
+                <h1>Pinal Patel</h1>
+                <p>BSc Data Science Student | Aspiring Data Analyst | Machine Learning & AI Enthusiast | Exploring Data Analytics & Research</p>
+            </div>
+            <div class="hero-actions">
+                <button class="btn btn-outline" id="themeToggle">🌙 Dark Mode</button>
+                <button class="btn btn-primary" id="downloadPdf">📥 Download PDF Resume</button>
+            </div>
+        </div>
+
+        <!-- Career Objective Card -->
+        <div class="card">
+            <h2>Career Objective</h2>
+            <p>Data Science student with knowledge of Python, SQL, and data analysis. Seeking an opportunity to apply analytical and programming skills to solve real-world problems and gain industry experience.</p>
+        </div>
+
+        <!-- Contact Information Card -->
+        <div class="card">
+            <h2>Contact Information</h2>
+            <div class="contact-details">
+                <span>📧 pinal@gmail.com</span>
+                <span>📞 +91 5631598745</span>
+                <span>📍 Mumbai, India</span>
+            </div>
+            <div class="contact-buttons">
+                <a href="https://www.linkedin.com/in/pinal-patel-a24a2a386" target="_blank" class="btn btn-primary">LinkedIn Profile</a>
+                <a href="https://github.com/pinal12092007-code" target="_blank" class="btn btn-primary">GitHub Profile</a>
+            </div>
+        </div>
+
+        <!-- Education Card -->
+        <div class="card">
+            <h2>Education</h2>
+            <div class="item-header">
+                <h3>Bachelor Of Science In Data Science, Data Analytics</h3>
+                <span class="date">2025 - 2028</span>
+            </div>
+            <p>Kes Shroff College Kandivali &nbsp;|&nbsp; <strong>CGPA:</strong> 7.09 / 10</p>
+        </div>
+
+        <!-- Trainings & Certifications Card -->
+        <div class="card">
+            <h2>Trainings / Certifications</h2>
+            <div class="item-header">
+                <h3>Python For Data Science</h3>
+                <span class="date">Jul 2025 - Present</span>
+            </div>
+            <p><strong>St. Law Computer Institute, Mumbai</strong> — Learning Python programming, data analysis basics, and problem solving. Practicing datasets and building small projects related to data science.</p>
+        </div>
+
+        <!-- Portfolio & Projects Card -->
+        <div class="card">
+            <h2>Portfolio & Projects</h2>
+            
+            <div class="project-item">
+                <div class="item-header">
+                    <h3>SciWrite Flask App (AI Writing Assistant)</h3>
+                    <span class="date">2026</span>
+                </div>
+                <p>A Python Flask and AI-powered web application designed to streamline scientific and academic writing.</p>
+                <div class="project-links">
+                    <a href="https://sciwrite-flask-app.vercel.app/" target="_blank" class="link">🌐 Live Demo ↗</a> | 
+                    <a href="https://github.com/pinal12092007-code/sciwrite-flask-app" target="_blank" class="link">📂 GitHub Repo ↗</a>
+                </div>
+            </div>
+
+            <div class="project-item" style="margin-top: 20px;">
+                <div class="item-header">
+                    <h3>Student Database Management System</h3>
+                    <span class="date">Mar 2026 - Present</span>
+                </div>
+                <p>Developed a Student Database Management System using MySQL and SQL Server to store, manage, and retrieve student records efficiently.</p>
+            </div>
+        </div>
+
+        <!-- Skills Card -->
+        <div class="card">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">Python</div>
+                <div class="skill-tag">MySQL</div>
+                <div class="skill-tag">MS SQL Server</div>
+                <div class="skill-tag">SQL</div>
+                <div class="skill-tag">C++ Programming</div>
+                <div class="skill-tag">Algorithms</div>
+                <div class="skill-tag">Problem Solving</div>
+                <div class="skill-tag">Data Analytics</div>
+                <div class="skill-tag">C Programming</div>
+                <div class="skill-tag">HTML</div>
+                <div class="skill-tag">CSS</div>
+                <div class="skill-tag">Figma</div>
+                <div class="skill-tag">Java</div>
+                <div class="skill-tag">JavaScript</div>
+                <div class="skill-tag">Node.js</div>
+            </div>
+        </div>
+
+        <!-- Extra Curricular Activities Card -->
+        <div class="card">
+            <h2>Extra Curricular Activities</h2>
+            <p>Regularly explore programming, data science, and cybersecurity topics. Attend technology exhibitions and actively share technical learning on LinkedIn.</p>
+        </div>
+
+        <!-- Additional Details Card -->
+        <div class="card">
+            <h2>Additional Details</h2>
+            <ul style="padding-left: 20px;">
+                <li>Bachelor of Data Science Student (2025-2028)</li>
+                <li>AI Blueprint Workshop — Awarded by KES Shroff College Kandivali</li>
+            </ul>
+        </div>
+
+        <div class="footer-note">
+            <p>© 2026 Pinal Patel — Professional Portfolio</p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            if (currentTheme === 'light') {
+                body.setAttribute('data-theme', 'dark');
+                themeToggle.textContent = '☀️ Light Mode';
+            } else {
+                body.setAttribute('data-theme', 'light');
+                themeToggle.textContent = '🌙 Dark Mode';
+            }
+        });
+
+        const downloadBtn = document.getElementById('downloadPdf');
+        downloadBtn.addEventListener('click', () => {
+            const element = document.querySelector('.container');
+            const options = {
+                margin:       10,
+                filename:     'Pinal_Patel_Resume.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2, useCORS: true },
+                jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            };
+            
+            const prevTheme = body.getAttribute('data-theme');
+            body.setAttribute('data-theme', 'light');
+            themeToggle.style.display = 'none';
+            downloadBtn.style.display = 'none';
+
+            html2pdf().from(element).set(options).save().then(() => {
+                body.setAttribute('data-theme', prevTheme);
+                themeToggle.style.display = 'inline-flex';
+                downloadBtn.style.display = 'inline-flex';
+            });
+        });
+    </script>
+</body>
+</html>
